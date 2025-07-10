@@ -108,14 +108,12 @@ height: 100%;
             backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 0;
-            /* margin: 0; */
-            /* border: solid red 1px ; */
+            border: solid red 1px ;
             height: 100%;
-            width: 25%;
+            width: fit-content;
             display: flex;
-            justify-content: space-evenly;
             align-items: center;
-            margin-right: auto
+            margin-left: 2em;
            }
 
             .rightlist {
@@ -248,13 +246,15 @@ height: 100%;
             align-items: center ;
         }
 
-        a {
+        .navlinks {
             color : rgb(120, 93, 99); 
             text-decoration: none;
             /* font-family: dosis  ; */
-            font-family: montserat;
-            font-size: 1.2rem;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9 em;
             transition: transform .3s;  
+            white-space: nowrap;
         }
 
         a:hover{
@@ -645,10 +645,10 @@ filter: drop-shadow( black -10px 4px 6px);
     <nav class="header">
 
         <div class="leftlist">
-            <a href="#events" class="portfolio">Events</a>
-            <a href='#optional' class="optional">Optional</a>
-            <a  href="#aboutus">About us</a>
-            <a href="#contact">Contacts</a>
+            <a href="#events"  class="nag_links">Events</a>
+            <a href='#optional'class="nag_links">Optional</a>
+            <a href="#aboutus" class="nag_links">About us</a>
+            <a href="#contact" class="nag_links">Contacts</a>
         </div>
 
 
