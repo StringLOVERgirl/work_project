@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>След от мыши (Чистый JS)</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/"
+          }
+        }
+      </script>
     <script type="module" src="./js/mainscript.js" defer></script>
     <style>
         /* CSS стили для всей страницы */
@@ -61,11 +69,11 @@
         .cont{
              height: 100vh;
             width: 100%;
-            background-image: url('./src/images/flowerbg.png');
-            background-color: rgb(221, 212, 225); 
-            background-repeat: no-repeat;
+            background-image: url('./src/images/2148426016.jpg');
+            /* background-color: rgb(221, 212, 225);  */
+            background-repeat: repeat-x;
             background-position: center;
-            background-size: auto 100%;
+            background-size: auto 80%;
             background-attachment: fixed;
             position: relative;
             animation: blurCont 1.5s ease-out;
@@ -78,6 +86,14 @@
     font-weight: normal;
     src: url('./fonts/Montserrat-Light.otf');
     }
+    @font-face {
+    font-family: 'montserat thin';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./fonts/Montserrat-Thin.otf');
+    }
+
+
 
         header {
             height: 10%;
@@ -100,6 +116,7 @@
 
         .header {
             display: flex;
+            align-items: center;
 height: 100%;
     
            }
@@ -108,7 +125,7 @@ height: 100%;
             backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 0;
-            border: solid red 1px ;
+            /* border: solid red 1px ; */
             height: 100%;
             width: fit-content;
             display: flex;
@@ -141,16 +158,19 @@ height: 100%;
         .logoCont{
             position: relative;
          /* width: 15%; */
-         height: 120%;   
+         height: 100%;   
          /* border: solid yellow 1px; */
          text-align: center;
          display: flex;
          align-items: center;
          justify-content: center ;
-         padding-top: 1vh;
-         /* margin-left: auto; */
+         /* padding-top: 1vh; */
+         margin-left: 8em;
+         /* margin-right: auto; */
          animation: takingPlace 1.5s ease-out forwards;;
         }
+
+     
 
         @keyframes takingPlace {
             from {
@@ -205,9 +225,16 @@ height: 100%;
         } */
 
         .logoImg{
-            height: 9em;
+            height: 100%;
             transition: transform .5s;
         }
+        @media (max-width: 999.98px) {
+            .logoImg {
+                height: 90%;
+            }
+        }
+
+      
 
         span,li {
             /* font-family: Dosis; */
@@ -258,8 +285,15 @@ height: 100%;
             margin-inline: 0.5em;
         }
 
+        @media  (min-height: 700px) {
+            .nav_links {
+                font-size: 1em
+            }
+        }
+
         a:hover{
-            transform: scale( 1.1);
+            transform: scale( 1.2) 
+            /* translateY(0px); */
         }
         
         .layer {
@@ -436,9 +470,10 @@ transform-style: preserve-3d;
         }
 
         .p1Text{
-            font-size: 2.3em;
-            font-family: Arial;
-            color: rgb(49, 61, 38);
+            font-size: 3em;
+            font-family: montserat thin;
+            /* color: rgb(49, 61, 38); */
+            color: white;
             /* text-transform: uppercase; */
             letter-spacing: 2px;
             text-rendering: optimizeSpeed;
@@ -452,7 +487,8 @@ transform-style: preserve-3d;
             position: absolute;
             bottom: 10vh;
             left: 7vh; 
-    
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.11)
             
         }
 
@@ -637,6 +673,14 @@ filter: drop-shadow( black -10px 4px 6px);
    animation: blurChange 0.5s
 }
 
+.Canvas3d{
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    z-index: -1;
+    
+}
+
     </style>
 </head>
 <body>
@@ -646,6 +690,8 @@ filter: drop-shadow( black -10px 4px 6px);
     <nav class="header">
 
         <div class="leftlist">
+            <a href="" class="height nav_links"></a>
+            <a href="" class="width nav_links"></a>
             <a href="#events"  class="nav_links">Events</a>
             <a href='#optional'class="nav_links">Optional</a>
             <a href="#aboutus" class="nav_links">About us</a>
@@ -742,9 +788,30 @@ filter: drop-shadow( black -10px 4px 6px);
 
 </footer>
 
+
+
     <script type="module">
 
 document.addEventListener('DOMContentLoaded',() =>{
+
+let intro = document.querySelector('.cont')
+
+let width = document.querySelector('.width')
+let height = document.querySelector('.height')
+function setSizes(){
+    width.textContent = window.innerWidth
+    height.textContent = window.innerHeight
+} 
+// setSizes()
+// window.addEventListener('resize',setSizes)
+
+
+
+
+
+
+
+
 
 let animatedCont = document.querySelector('.firstpTextCont')
 
@@ -828,6 +895,10 @@ async function changeChar() {
 }
 setInterval(changeChar, 6000)
 
+
+// let secondLine = document.querySelector('.line2')
+// secondLine.remove()
+// animatedCont.append(secondLine)
 
 
 
