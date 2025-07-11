@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded',startJs)
 
 function startJs(){
     let cont = document.querySelector('.cont')
+    
 
 
     animateHeader()
