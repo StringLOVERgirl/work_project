@@ -66,12 +66,12 @@ scene.add(ambientLight)
 // создает канвас 
 
 const textureLoader = new THREE.TextureLoader();
-const texture1 = textureLoader.load('./src/images/trtyakovSquare.png'); // Передняя грань
-const texture2 = textureLoader.load('./src/images/trtyakovSquare.png'); // Задняя грань
-const texture3 = textureLoader.load('./src/images/trtyakovSquare.png'); // Верхняя грань
-const texture4 = textureLoader.load('./src/images/trtyakovSquare.png'); // Нижняя грань
-const texture5 = textureLoader.load('./src/images/trtyakovSquare.png'); // Правая грань
-const texture6 = textureLoader.load('./src/images/trtyakovSquare.png'); // Левая гра
+const texture1 = textureLoader.load('./src/images/trtyakovsquare.png'); // Передняя грань
+const texture2 = textureLoader.load('./src/images/trtyakovsquare.png'); // Задняя грань
+const texture3 = textureLoader.load('./src/images/trtyakovsquare.png'); // Верхняя грань
+const texture4 = textureLoader.load('./src/images/trtyakovsquare.png'); // Нижняя грань
+const texture5 = textureLoader.load('./src/images/trtyakovsquare.png'); // Правая грань
+const texture6 = textureLoader.load('./src/images/trtyakovsquare.png'); // Левая гра
 const geometry = new THREE.BoxGeometry();
 const materials = [
   // Правая грань
