@@ -47,12 +47,12 @@ element.appendChild(renderer.domElement);
 //  (то есть создаём контекст WebGL вручную, не полагаясь на автоматику Three.js)
 //antialias: true — сглаживание краёв
 //setSize — чтобы холст занимал весь экран
-  // canvas.style.width = `${window.innerWidth / 1.5}px`;
-  // canvas.style.height = `${window.innerHeight / 1.5}px`;
-  // window.addEventListener('resize', ()=>{
-  //   canvas.style.width = `${window.innerWidth / 1.5}px`;
-  //   canvas.style.height = `${window.innerHeight / }px`;
-  // })
+  canvas.style.width = `${window.innerWidth / 1.3}px`;
+  canvas.style.height = `${window.innerHeight / 1.3}px`;
+  window.addEventListener('resize', ()=>{
+    canvas.style.width = `${window.innerWidth / 1.3}px`;
+    canvas.style.height = `${window.innerHeight /1.3 }px`;
+  })
 
  function resizeCuber (){
   let width = window.innerWidth/1.3
