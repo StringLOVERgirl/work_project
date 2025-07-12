@@ -55,8 +55,8 @@ element.appendChild(renderer.domElement);
   // })
 
  function resizeCuber (){
-  let width = window.innerWidth/4
-  let height = window.innerHeight/4
+  let width = window.innerWidth/1.3
+  let height = window.innerHeight/1.3
     renderer.setSize(width, height ) 
     // camera.aspect = (width/2)/ (height/2); // ?
          camera.aspect = width/height; // ?
