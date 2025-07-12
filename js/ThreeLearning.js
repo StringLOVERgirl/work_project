@@ -38,7 +38,7 @@ const context = canvas.getContext('webgl');
 
 const renderer = new THREE.WebGLRenderer({ antialias: true,   canvas: canvas, context: context})
 
-    renderer.setSize(window.innerWidth/1, window.innerHeight/1) 
+    renderer.setSize(window.innerWidth/1.3, window.innerHeight/1.3) 
 
 element.appendChild(renderer.domElement);
 
@@ -47,14 +47,20 @@ element.appendChild(renderer.domElement);
 //  (то есть создаём контекст WebGL вручную, не полагаясь на автоматику Three.js)
 //antialias: true — сглаживание краёв
 //setSize — чтобы холст занимал весь экран
-  canvas.style.width = `${window.innerWidth / 2}px`;
-  canvas.style.height = `${window.innerHeight / 2}px`;
+  // canvas.style.width = `${window.innerWidth / 1.5}px`;
+  // canvas.style.height = `${window.innerHeight / 1.5}px`;
+  // window.addEventListener('resize', ()=>{
+  //   canvas.style.width = `${window.innerWidth / 1.5}px`;
+  //   canvas.style.height = `${window.innerHeight / }px`;
+  // })
 
  function resizeCuber (){
-  let width = window.innerWidth/1
-  let height = window.innerHeight/1
-    renderer.setSize(width, height, false) 
-    camera.aspect = width/ height; // ? 
+  let width = window.innerWidth/4
+  let height = window.innerHeight/4
+    renderer.setSize(width, height ) 
+    // camera.aspect = (width/2)/ (height/2); // ?
+         camera.aspect = width/height; // ?
+
     camera.updateProjectionMatrix();// ?
 }
 
