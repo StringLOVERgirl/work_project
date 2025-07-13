@@ -10,7 +10,7 @@ function startJs(){
     
 
 
-    // animateHeader()
+    animateHeader()
     document.addEventListener('mousemove', cursor);
     window.addEventListener('scroll',parallax);    
     init3d(cont)
