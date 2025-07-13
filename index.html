@@ -70,15 +70,29 @@
                           height: 100svh;
 
             width: 100%;
-            background-image: url('./src/images/2148426016.jpg');
+            /* background-image: url('./src/images/2148426016.jpg'); */
             /* background-color: rgb(221, 212, 225);  */
+            background-repeat: repeat-x;
+            /* background-position: center calc(50% + var(--bgPositionCont)); */
+            /* background-position: center;
+            background-size: auto 80%;
+            background-attachment: fixed; */
+            position: relative;
+            animation: blurCont 1.5s ease-out;
+        }
+        .cont::before{
+            content: '';
+            background-image: url('./src/images/2148426016.jpg');
+            position: fixed;
+            top: 0;
+            left: 0;
             background-repeat: repeat-x;
             /* background-position: center calc(50% + var(--bgPositionCont)); */
             background-position: center;
             background-size: auto 80%;
-            background-attachment: fixed;
-            position: relative;
-            animation: blurCont 1.5s ease-out;
+            height: inherit;
+            width: inherit;
+   
         }
 
       
@@ -953,9 +967,9 @@ let aboutus = document.querySelector('.introTextCont')
         //     ticking = false;
         // }
         let prevheight = intro.clientHeight
-        intro.addEventListener('resize',()=>{
-             intro.style.height = prevheigh
-        })
+        // intro.addEventListener('resize',()=>{
+        //     //  intro.style.height = prevheigh
+        // })
 
         window.addEventListener('scroll',()=>{explodingImg()
             // if (!ticking) {
