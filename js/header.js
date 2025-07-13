@@ -19,14 +19,22 @@ let header = document.querySelector('header');
                         header.classList.remove('headerOn')
                         header.classList.add('headerOff')
                         // animating()
-                    } else if (window.scrollY <= prevScroll) {
-                        if (header.classList.contains('headerOff')) {
+                    }  if (window.scrollY <= prevScroll) {
+
+                        if 
+                        // убрано else 
+                        (header.classList.contains('headerOff')) {
                             header.classList.remove('headerOff')
                             header.classList.add('headerOn')
                             isAnimating = true
                             // animating()
                         }
                     }
+                    if (window.scrollY == 0){
+                        if (!header.classList.contains('headerOff')){
+                        header.classList.add('headerOn')}
+
+                    } // новый блок иф
                     prevScroll = window.scrollY
                 }
 
