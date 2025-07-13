@@ -70,31 +70,18 @@
                           height: 100svh;
 
             width: 100%;
-            /* background-image: url('./src/images/2148426016.jpg'); */
+            background-image: url('./src/images/2148426016.jpg');
             /* background-color: rgb(221, 212, 225);  */
             background-repeat: repeat-x;
-            /* background-position: center calc(50% + var(--bgPositionCont)); */
+            background-position: center calc(50% + var(--bgPositionCont));
             /* background-position: center;
-            background-size: auto 80%;
-            background-attachment: fixed; */
+            /* background-size: auto 80%; */
+            /* background-attachment: fixed;  */
             position: relative;
+            will-change: background-position;
             animation: blurCont 1.5s ease-out;
         }
-        .cont::before{
-            content: '';
-            background-image: url('./src/images/2148426016.jpg');
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-repeat: repeat-x;
-            /* background-position: center calc(50% + var(--bgPositionCont)); */
-            background-position: center;
-            background-size: auto 80%;
-            height: inherit;
-            width: inherit;
-            background-attachment: fixed;
-   
-        }
+    
 
       
         @font-face {
@@ -960,25 +947,22 @@ let aboutus = document.querySelector('.introTextCont')
             }
 
         }
-        // document.documentElement.style.setProperty('--bgPositionCont', '0px')
-        // let ticking = false;
-        // function         attachmentFixedCont    (){
-        //     if (scrollY <= intro.clientHeight){
-        //     document.documentElement.style.setProperty('--bgPositionCont', `${scrollY}px`)}
-        //     ticking = false;
-        // }
-        let prevheight = intro.clientHeight
-        // intro.addEventListener('resize',()=>{
-        //     //  intro.style.height = prevheigh
-        // })
+        document.documentElement.style.setProperty('--bgPositionCont', '0px')
+        let ticking = false;
+        function         attachmentFixedCont    (){
+            if (scrollY <= intro.clientHeight){
+            document.documentElement.style.setProperty('--bgPositionCont', `${scrollY}px`)}
+            ticking = false;
+        }
+   
 
         window.addEventListener('scroll',()=>{explodingImg()
-            // if (!ticking) {
-    // window.requestAnimationFrame(() => {
-    //   attachmentFixedCont();
-    // });
-    // ticking = true;
-//   }
+            if (!ticking) {
+    window.requestAnimationFrame(() => {
+      attachmentFixedCont();
+    });
+    ticking = true;
+  }
         })
 
         
